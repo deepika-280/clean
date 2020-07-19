@@ -45,32 +45,32 @@ public class calculate extends Applet implements ActionListener {
 	public void actionPerformed(ActionEvent ae)
 	{
 
-	String materialstandard;
-	double totalarea,totalcost=0.0;
+	String material;
+	double area,cost=0.0;
 	int constructioncost;
 	String automated;
-	materialstandard=tf1.getText();
-	totalarea=Double.parseDouble(tf2.getText());
+	material=tf1.getText();
+	area=Double.parseDouble(tf2.getText());
 	automated=tf3.getText().toLowerCase();
 	if (ae.getSource()==a)
 	{
-	if(materialstandard.equals("standard")) {
+	if(material.equals("standard")) {
 	constructioncost=1200;
-	totalcost=constructioncost*totalarea;
+	cost=constructioncost*area;
 	}
-	else if(materialstandard.equals("above standard")) {
+	else if(material.equals("above standard")) {
 	constructioncost=1500;
-	totalcost=constructioncost*totalarea;
+	cost=constructioncost*area;
 	}
-	else if(materialstandard.equals("high standard")) {
+	else if(material.equals("high standard")) {
 	constructioncost=1800;
-	totalcost=constructioncost*totalarea;
+	cost=constructioncost*area;
 	}
-	else if(materialstandard.equals("high standard") && (automated.equals("yes") || automated.equals("true"))) {
+	else if(material.equals("high standard") && (automated.equals("yes") || automated.equals("true"))) {
 	constructioncost=2500;
-	totalcost=constructioncost*totalarea;
+	cost=constructioncost*area;
 	}
-	tf4.setText(Double.toString(totalcost));
+	tf4.setText(Double.toString(cost));
 	}
 }
 }
